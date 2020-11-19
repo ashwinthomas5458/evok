@@ -3,14 +3,11 @@
     padding: 0;
     box-sizing: border-box;
 }
-.flex{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
 header{
     width: 100%;
     height: 76px;
+    display: flex;
+    align-items: center;
     justify-content: space-between;
     position: fixed;
     background: #ffffff;
@@ -25,14 +22,38 @@ header{
     letter-spacing: 0.01em;
     color: #000000;
 }
+.flex{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 header a{
+    width: 75px;
     font-family: Quicksand;
     font-weight: 500;
     font-size: 12px;
     line-height: 15px;
     letter-spacing: 0.01em;
     color: #46C212;
-    margin: 0 0.4% 0 auto;
+}
+.navicon {
+    width: auto;
+    height: 2rem;
+    display: none;
+    cursor: pointer;
+}
+.navicon div{
+    width: 30px;
+    height: 3px;
+    margin: 0 1rem;
+    background-color: #101010;
+    transition: all 0.5s ease;
+}
+.navLinks{
+    width: 307px;
+    height: auto;
+    margin: 0 11.4vw 0 8.04vw;
+    justify-content: space-between;
 }
 button{
     font-family: Quicksand;
@@ -50,12 +71,11 @@ button{
     border: 1px solid #065CAB;
     color: #ffffff;
     border-radius: 4px;
-    margin: 0 2% 0 11.4%;
+    margin: 0 0 0 11.4vw;
 }
 .categories{
     width: 82px;
     height: 15px;
-    margin: 0 1.5%;
     justify-content: space-between;
 }
 .search{
@@ -97,7 +117,7 @@ button{
     border: 1px solid #065CAB;
     border-radius: 4px;
     color: #ffffff;
-    margin: 0 11.4% 0 0.6%;
+    margin: 0 0 0 14px;
 }
 .main{
     width: 100%;
@@ -499,3 +519,167 @@ footer{
     width: 100%;
     justify-content: space-between;
 }
+@media screen and (max-width:1280px){
+    .navLinks{
+        margin-left: 0;
+    }
+}
+@media screen and (max-width:1150px){
+    .logo{
+        margin-left: 6vw;
+    }
+    .navLinks{
+        margin-right: 6vw;
+    }
+    .cover .content{
+        margin: 150px 0 0 6%;
+        min-height: 320px;
+        height: auto;
+    }
+    .container figure{
+        width: 88%;
+    }
+    .container .list{
+        width: 88%;
+    }
+    .courseCategories figure{
+        width: 88%;
+    }
+    .courseCategories .list{
+        width: 88%;
+    }
+    .section .content{
+        left: 6%;
+    }
+    .footer{
+        width: 88%;
+    }
+}
+@media screen and (max-width:1000px){
+    .nav{
+        margin-right: 4vw;
+    }
+    .navLinks{
+        position: absolute;
+        right: 0;
+        top: 76px;
+        height: 330px;
+        width: 220px;
+        background-color: #ffffff;
+        flex-direction: column;
+        justify-content: space-evenly;
+        margin:0;
+        transition: 0.3s ease-in;
+        clip-path: circle(60px at 110% -25%);
+        -webkit-clip-path: circle(60px at 110% -25%);
+    }
+    .navicon{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;       
+    }
+    .nav-active{
+        clip-path: circle(700px at 110% -25%);
+        -webkit-clip-path: circle(700px at 110% -25%);
+    }
+    .navItems{
+        opacity: 0;
+        transition: 0.3s ease;
+    }
+    .navItemsActive{
+        opacity: 1;
+        transition-delay: 0.3s;
+    }
+    .cover .coverContent img{
+        display: none;
+    }
+    .cover .content img{
+        display: unset;
+    }
+}
+@media screen and (max-width:720px){
+    .search{
+        width: 220px;
+        height: 42px;
+        overflow: hidden;
+    }
+    .search input{
+        width: 220px;
+    }
+    .categories{
+        width: auto;
+        margin-right: 4%;
+    }
+    .categories p{
+        display: none;
+    }
+    .courseCategories{
+        height: 830px;
+    }
+    .courseCategories .content{
+        top: -830px;
+    }
+    .section .content{
+        width: auto;
+        height: auto;
+        top: 50px;
+    }
+}
+@media screen and (max-width:450px){
+    .cover .content h1 {
+        line-height: unset;
+        letter-spacing: unset;
+    }
+    .search{
+        width: 42px;
+        transition: 0.4s ease;
+    }
+    .search input{
+        display: none;
+    }
+    .search svg{
+        cursor: pointer;
+    }
+    .searchActive{
+        width: 100vw;
+        height: 76px;
+        position: fixed;
+        top: 0;
+        left: 0;
+        background: #ffffff;
+        z-index: 20;
+    }
+    .cover{
+        height: 660px;
+    }
+    .section{
+        height: 580px;
+    }
+    .section .content figure{
+        width: auto;
+        height: 100px;
+        flex-direction: column;
+    } 
+}
+@media screen and (max-width:350px){
+    .cover .content h1 {
+        font-size: 56px;
+    }
+    .courseCategories figure {
+        font-size: 25px;
+        line-height: unset;
+    }
+    .container figure {
+        font-size: 24px;
+        line-height: unset;
+    }
+}
+.x .line1{
+    transform: rotate(-45deg) translate(-5px,6px);
+}
+.x .line2{
+    opacity: 0;
+}
+.x .line3{
+    transform: rotate(45deg) translate(-5px,-6px);
+} 
